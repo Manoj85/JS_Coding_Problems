@@ -20,9 +20,17 @@ console.log(isPalindrome(12321));
  */
 
 const checkPalindrome = (str) => {
+    // Convert the `input` to `string` and `trim`
     const str_validated = str.toString().trim();
+
+    // Clean the `input (validated above)` and remove any spaces
+    // Example: 'race car'; it's a palindrome removing the space
     const clean_str = str_validated.toLowerCase().replace(/\W/g, '');
+
+    // create a reverse string from the `cleaned input string` above
     const str_rev = clean_str.split('').reverse().join('').trim();
+
+    // Return a boolean - comparing `reverse string` to the `cleaned string`
     return clean_str === str_rev;
 }
 
